@@ -1,5 +1,10 @@
 from django.shortcuts import render
+from .models import UserProfile
 
-# Create your views here.
 def index(request):
-    return render(request, 'index.html')
+    # Obtener el primer perfil
+    try:
+        profile = UserProfile.objects.first()
+    except UserProfile.DoesNotExist:
+        profile = None
+    return render(request, 'index.html', {"profile": profile})

@@ -25,10 +25,10 @@
                 <!-- Información principal -->
                 <div class="user-info__general">
                     <div class="user-info__container-image">
-                        <img src="{% static 'img/default-user.jpg' %}" alt="Foto de perfil de usuario" class="user-info__image">
+                        <img src="{{ profile.foto_perfil.url }}" alt="Foto de perfil de {{ profile.nombre_completo }}" class="user-info__image">
                     </div>
-                    <h2 class="user-info__name">R. Benito Vásquez R.</h2>
-                    <h4 class="user-info__job">Desarrollador Web</h4>
+                    <h2 class="user-info__name">{{ profile.nombre_completo }}</h2>
+                    <h4 class="user-info__job">{{ profile.titulo_profesional }}</h4>
                 </div>
                 <!-- Menú de navegación -->
                 <nav class="layout__menu">
@@ -79,14 +79,34 @@
                 <!-- Links de redes sociales -->
                 <div class="user-info__links">
                     <ul class="links__social">
-                        <li class="social__option"><a href="#" class="social_link"><i class="fa-brands fa-github social__icon"></i></a></li>
-                        <li class="social__option"><a href="#" class="social_link"><i class="fa-brands fa-linkedin-in social__icon"></i></a></li>
-                        <li class="social__option"><a href="#" class="social_link"><i class="fa-brands fa-discord social__icon"></i></a></li>
+                        {% if profile.github_url %}
+                        <li class="social__option">
+                            <a href="{{ profile.github_url }}" class="social_link" target="_blank">
+                                <i class="fa-brands fa-github social__icon"></i>
+                            </a>
+                        </li>
+                        {% endif %}
+                        {% if profile.linkedin_url %}
+                        <li class="social__option">
+                            <a href="{{ profile.linkedin_url }}" class="social_link" target="_blank">
+                                <i class="fa-brands fa-linkedin-in social__icon"></i>
+                            </a>
+                        </li>
+                        {% endif %}
+                        {% if profile.discord_url %}
+                        <li class="social__option">
+                            <a href="{{ profile.discord_url }}" class="social_link" target="_blank">
+                                <i class="fa-brands fa-discord social__icon"></i>
+                            </a>
+                        </li>
+                        {% endif %}
                     </ul>
                 </div>
                 <!-- Botón de CV -->
                 <div class="user-info__buttons">
-                    <a href="#" class="user-info__btn">Descarga CV</a>
+                    {% if profile.cv_file %}
+                    <a href="{{ profile.cv_file.url }}" class="user-info__btn" target="_blank">Descarga CV</a>
+                    {% endif %}
                 </div>
                 <!-- Footer -->
                 <footer class="user-info__footer">
