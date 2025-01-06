@@ -1,5 +1,9 @@
 from django.shortcuts import render
+from index.models import UserProfile
 
-# Create your views here.
 def curriculum(request):
-    return render(request, 'curriculum.html')
+    try:
+        profile = UserProfile.objects.first()
+    except UserProfile.DoesNotExist:
+        profile = None
+    return render(request, 'curriculum.html', {"profile": profile})

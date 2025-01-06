@@ -1,8 +1,10 @@
 from django.shortcuts import render
+from index.models import UserProfile
 
-# Create your views here.
 def portafolio(request):
-    return render(request, 'portafolio.html')
-
-
+    try:
+        profile = UserProfile.objects.first()
+    except UserProfile.DoesNotExist:
+        profile = None
+    return render(request, 'portafolio.html', {"profile": profile})
 

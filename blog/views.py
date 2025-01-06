@@ -1,5 +1,9 @@
 from django.shortcuts import render
+from index.models import UserProfile
 
-# Create your views here.
 def blog(request):
-    return render(request, 'blog.html')
+    try:
+        profile = UserProfile.objects.first()
+    except UserProfile.DoesNotExist:
+        profile = None
+    return render(request, 'blog.html', {"profile": profile})
