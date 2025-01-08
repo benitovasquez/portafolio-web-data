@@ -1,0 +1,18 @@
+
+/*Blog*/
+.content__blog {
+    height: 100%;
+    min-height: 100%;
+    padding: 6rem 3rem;
+    overflow: auto;
+    display: block;
+}
+
+
+.blog__articles {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+    width: 100%;
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% include 'partials/_head.html' %}
+</head>
+<body>
+    <div class="layout">
+        <!-- Barra lateral (info usuario) -->
+        {% include 'partials/_sidebar.html' %}
+
+        <!--Menu responsive-->
+        <div class="layout__menu-toggle">
+            <i class="menu-toggle__icon fa-solid fa-bars"></i>
+            <i class="menu-toggle__icon fa-solid fa-xmark"></i>
+        </div>
+
+        <!-- Contenido principal -->
+        <main class="layout__content">
+            {% block content %}
+            {% endblock %}
+        </main>
+    </div>
+</body>
+</html>

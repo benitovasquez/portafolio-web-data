@@ -1,0 +1,17 @@
+/* Importar variables */
+@import url('variables.css');
+
+/*Contenido Generales (Sobre mi y otra paginas)*/
+.content__contact {
+    height: 100%;
+    min-height: 100%;
+    padding: 6rem 3rem;
+    overflow: auto;
+    display: block;
+}
+
+/*Elementos activos*/
+.menu__link--active {
+    color: var(--color-secundary);
+}
+

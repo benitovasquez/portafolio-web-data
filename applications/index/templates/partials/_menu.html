@@ -1,0 +1,41 @@
+<!-- Menú de navegación -->
+<nav class="layout__menu">
+    <ul class="menu__list">
+        <li class="menu__option">
+            <a href="{% url 'index' %}" class="menu__link {% if request.resolver_match.url_name == 'index' %}menu__link--active{% endif %}">
+                <i class="fa-solid fa-house menu__icon {% if request.resolver_match.url_name == 'index' %}menu__link--active{% endif %}"></i>
+                <span class="menu__overlay {% if request.resolver_match.url_name == 'index' %}menu__link--active{% endif %}">Home</span>
+            </a>
+        </li>
+        <li class="menu__option">
+            <a href="{% url 'sobre-mi' %}" class="menu__link {% if request.resolver_match.url_name == 'sobre-mi' %}menu__link--active{% endif %}">
+                <i class="fa-solid fa-user menu__icon {% if request.resolver_match.url_name == 'sobre-mi' %}menu__link--active{% endif %}"></i>
+                <span class="menu__overlay {% if request.resolver_match.url_name == 'sobre-mi' %}menu__link--active{% endif %}">Sobre Mi</span>
+            </a>
+        </li>
+        <li class="menu__option">
+            <a href="{% url 'curriculum' %}" class="menu__link {% if request.resolver_match.url_name == 'curriculum' %}menu__link--active{% endif %}">
+                <i class="fa-solid fa-graduation-cap menu__icon {% if request.resolver_match.url_name == 'curriculum' %}menu__link--active{% endif %}"></i>
+                <span class="menu__overlay {% if request.resolver_match.url_name == 'curriculum' %}menu__link--active{% endif %}">Curriculum</span>
+            </a>
+        </li>
+        <li class="menu__option">
+            <a href="{% url 'portafolio' %}" class="menu__link {% if request.resolver_match.url_name == 'portafolio' %}menu__link--active{% endif %}">
+                <i class="fa-solid fa-briefcase menu__icon {% if request.resolver_match.url_name == 'portafolio' %}menu__link--active{% endif %}"></i>
+                <span class="menu__overlay {% if request.resolver_match.url_name == 'portafolio' %}menu__link--active{% endif %}">Portafolio</span>
+            </a>
+        </li>
+        <li class="menu__option">
+            <a href="{% url 'blog' %}" class="menu__link {% if request.resolver_match.url_name == 'blog' %}menu__link--active{% endif %}">
+                <i class="fa-solid fa-book menu__icon {% if request.resolver_match.url_name == 'blog' %}menu__link--active{% endif %}"></i>
+                <span class="menu__overlay {% if request.resolver_match.url_name == 'blog' %}menu__link--active{% endif %}">Blog</span>
+            </a>
+        </li>
+        <li class="menu__option">
+            <a href="{% url 'contacto' %}" class="menu__link {% if request.resolver_match.url_name == 'contacto' %}menu__link--active{% endif %}">
+                <i class="fa-solid fa-envelope menu__icon {% if request.resolver_match.url_name == 'contacto' %}menu__link--active{% endif %}"></i>
+                <span class="menu__overlay {% if request.resolver_match.url_name == 'contacto' %}menu__link--active{% endif %}">Contacto</span>
+            </a>
+        </li>
+    </ul>
+</nav>

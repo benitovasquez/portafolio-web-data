@@ -1,0 +1,18 @@
+.user-info__buttons{
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+}
+.user-info__btn{
+    color: var(--color-principal);
+    border: 0.2rem solid var(--color-principal);
+    padding: 3rem;
+    padding-top: 1.3rem;
+    padding-bottom: 1.3rem;
+    border-radius: 3.2rem;
+    box-shadow: 0 10px 10px -8px rgba(0, 0, 0,0.2);
+    transition: all 300 ease-in-out;
+}
+.user-info__btn:hover{
+    background-color: var(--color-principal);
+    color: var(--color-secundary);
+}

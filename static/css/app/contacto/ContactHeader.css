@@ -1,0 +1,23 @@
+/* Estilos para ContactHeader */
+.contact__form-header {
+    display: inline-block;
+    padding-right: 1.2rem;
+    margin-bottom: 2.4rem;
+    position: relative;
+}
+
+.form-header__title {
+    font-size: 2.1rem;
+}
+
+.form-header__title::after {
+    content: "";
+    position: absolute;
+    width: 3rem;
+    height: 2rem;
+    top: 1.75rem;
+    right: -0.5rem;
+    background-image: repeating-radial-gradient(circle at center, var(--color-secundary) 0%, var(--color-secundary) 1px, transparent 1px, transparent 100%);
+    background-size: 6px 6px;
+    opacity: 0.5;
+}
