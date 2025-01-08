@@ -21,12 +21,12 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('index.urls')),
-    path('portfolio/', include('portfolio.urls')),
-    path('sobre-mi/', include('sobremi.urls')),
-    path('curriculum/', include('curriculum.urls')),
-    path('blog/', include('blog.urls')),
-    path('contacto/', include('contacto.urls')),
+    path('', include('applications.index.urls')),
+    path('portfolio/', include('applications.portfolio.urls')),
+    path('sobre-mi/', include('applications.sobremi.urls')),
+    path('curriculum/', include('applications.curriculum.urls')),
+    path('blog/', include('applications.blog.urls')),
+    path('contacto/', include('applications.contacto.urls')),
     path("__reload__/", include("django_browser_reload.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

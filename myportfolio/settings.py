@@ -40,12 +40,12 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "tailwind",
     "theme",
-    'portfolio',
-    'index',
-    'sobremi',
-    'curriculum',
-    'blog',
-    'contacto',
+    'applications.portfolio',
+    'applications.index',
+    'applications.sobremi',
+    'applications.curriculum',
+    'applications.blog',
+    'applications.contacto',
     'django_browser_reload',
 ]
 
