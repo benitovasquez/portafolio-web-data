@@ -1,0 +1,19 @@
+h1,h2,h3,h4,h5,h6{
+    color:var(--color-title)
+}
+a, button{
+    color: var(--color-icons);
+}
+
+.user-info__name{
+    font-size: 3.2rem;
+    font-weight: normal;
+    color: var(--color-principal);
+    margin-top: 2.6rem;
+}
+.user-info__job{
+    font-size: 1.7rem;
+    font-weight: 200;
+    color: var(--color-principal);
+    margin-top: 0.6rem;
+}

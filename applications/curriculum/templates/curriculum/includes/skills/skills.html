@@ -1,0 +1,31 @@
+<!-- Frontend Skills -->
+<header class="resume__subheader">
+    <h2 class="resume__subtitle">Habilidades de <span class="subtitle__color">Frontend</span></h2>
+</header>
+<div class="resume__skills">
+    {% for skill, percentage in frontend_skills %}
+    <article class="skills__title">
+        <h4 class="skills__text">{{ skill }}</h4>
+        <span class="skills__number">{{ percentage }}%</span>
+    </article>
+    <div class="skills__progressbar">
+        <div class="skills__percentage skills__percentage--{{ percentage }}"></div>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- Backend Skills -->
+<header class="resume__subheader">
+    <h2 class="resume__subtitle">Habilidades de <span class="subtitle__color">Backend</span></h2>
+</header>
+<div class="resume__skills">
+    {% for skill, percentage in backend_skills %}
+    <article class="skills__title">
+        <h4 class="skills__text">{{ skill }}</h4>
+        <span class="skills__number">{{ percentage }}%</span>
+    </article>
+    <div class="skills__progressbar">
+        <div class="skills__percentage skills__percentage--{{ percentage }}"></div>
+    </div>
+    {% endfor %}
+</div>

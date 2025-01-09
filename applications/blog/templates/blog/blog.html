@@ -2,93 +2,21 @@
 {% load static %}
 
 {% block content %}
+<link rel="stylesheet" href="{% static 'css/app/blog/blogHeader.css' %}">
+<link rel="stylesheet" href="{% static 'css/app/blog/blogArticlesSection.css' %}">
+<link rel="stylesheet" href="{% static 'css/app/blog/blogArticle1.css' %}">
+<link rel="stylesheet" href="{% static 'css/app/blog/blogArticle2.css' %}">
+<link rel="stylesheet" href="{% static 'css/app/blog/blogArticle3.css' %}">
+<link rel="stylesheet" href="{% static 'css/app/blog/blogArticle4.css' %}">
+
+
+
+
 <main class="layout__content">
     <section class="content__page content__blog">
-        <header class="blog__header">
-            <h1 class="blog__title">Blog</h1>
-        </header>
-        <section class="blog__articles">
-            <article class="articles__article">
-                <div class="article__top">
-                    <div class="article__category">Desarrollo</div>
-                    <a href="#" class="article__image-link">
-                        <div class="article__mask">
-                            <img src="{% static 'img/articulo-1.jpg' %}" alt="articulo1" class="article__image">
-                        </div>
-                        <div class="article__logo">
-                            <i class="article__icon fa-solid fa-book"></i>
-                        </div>
-                    </a>
-                </div>
-                <div class="article__bottom">
-                    <time class="article__date" datetime="2024-08-30">30/08/2024</time>
-                    <a href="#" class="article__link">
-                        <h2 class="article__title">Como aprender a programar a 2024 </h2>
-                    </a>
-                </div>
-            </article>
+        {% include 'blog/includes/header/header.html' %}
+        {% include 'blog/includes/articles/articles.html' %}
 
-            <article class="articles__article">
-                <div class="article__top">
-                    <div class="article__category">Desarrollo</div>
-                    <a href="#" class="article__image-link">
-                        <div class="article__mask">
-                            <img src="{% static 'img/articulo-2.jpg' %}" alt="articulo2" class="article__image">
-                        </div>
-                        <div class="article__logo">
-                            <i class="article__icon fa-solid fa-book"></i>
-                        </div>
-                    </a>
-                </div>
-                <div class="article__bottom">
-                    <time class="article__date" datetime="2024-08-30">30/08/2024</time>
-                    <a href="#" class="article__link">
-                        <h2 class="article__title">Como hacer animaciones en css </h2>
-                    </a>
-                </div>
-            </article>
-
-            <article class="articles__article">
-                <div class="article__top">
-                    <div class="article__category">Desarrollo</div>
-                    <a href="#" class="article__image-link">
-                        <div class="article__mask">
-                            <img src="{% static 'img/articulo-3.jpg' %}" alt="articulo3" class="article__image">
-                        </div>
-                        <div class="article__logo">
-                            <i class="article__icon fa-solid fa-book"></i>
-                        </div>
-                    </a>
-                </div>
-                <div class="article__bottom">
-                    <time class="article__date" datetime="2024-08-30">30/08/2024</time>
-                    <a href="#" class="article__link">
-                        <h2 class="article__title">Cómo usar el LocalStorage en Js </h2>
-                    </a>
-                </div>
-            </article>
-            
-            <article class="articles__article">
-                <div class="article__top">
-                    <div class="article__category">Desarrollo</div>
-                    <a href="#" class="article__image-link">
-                        <div class="article__mask">
-                            <img src="{% static 'img/articulo-4.jpg' %}" alt="articulo4" class="article__image">
-                        </div>
-                        <div class="article__logo">
-                            <i class="article__icon fa-solid fa-book"></i>
-                        </div>
-                    </a>
-                </div>
-                <div class="article__bottom">
-                    <time class="article__date" datetime="2024-08-30">30/08/2024</time>
-                    <a href="#" class="article__link">
-                        <h2 class="article__title">Como maquetar una web </h2>
-                    </a>
-                </div>
-            </article>
-
-        </section>
     </section>
 </main>
 {% endblock %}

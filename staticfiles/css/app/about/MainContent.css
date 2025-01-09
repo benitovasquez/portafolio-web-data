@@ -1,0 +1,32 @@
+.content__about {
+    height: 100%;
+    min-height: 100%;
+    padding: 6rem 3rem;
+    overflow: auto;
+    display: block;
+}
+
+.about__header {
+    margin-bottom: 4.5rem;
+    display: inline-block;
+}
+
+.about__title {
+    font-size: 3.2rem;
+    position: relative;
+}
+
+.title__color {
+    color: var(--color-secundary);
+}
+
+.about__title::after {
+    content: "";
+    position: absolute;
+    width: 5rem;
+    height: 3rem;
+    top: 2rem;
+    right: -2.5rem;
+    background-image: repeating-radial-gradient(circle at center, var(--color-secundary) 0%, var(--color-secundary) 1px, transparent 1px, transparent 100%);
+    background-size: 6px 6px;
+}

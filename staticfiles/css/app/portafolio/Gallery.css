@@ -1,0 +1,63 @@
+
+.portfolio__gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.gallery__item {
+    flex-basis: calc(33%);
+    padding: 0.7rem;
+    position: relative;
+}
+
+.gallery__container-image {
+    overflow: hidden;
+}
+
+.gallery__image {
+    transition: all 300ms ease-in-out;
+    height: 90%;
+}
+
+.gallery__item:hover .gallery__image {
+    transform: scale(1.1);
+}
+
+.gallery__title {
+    font-size: 1.6rem;
+    padding: 1.5rem 0;
+    font-weight: bold;
+}
+
+.gallery__icon {
+    opacity: 0;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.6rem;
+    text-align: center;
+    padding-top: 0.75rem;
+    background-color: var(--color-principal);
+    color: var(--color-secundary);
+    transition: all 450ms ease-in-out;
+}
+
+.gallery__category {
+    opacity: 0;
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    padding: 0.2rem 0.7rem;
+    font-size: 1.1rem;
+    background-color: var(--color-principal);
+    color: var(--color-text);
+    transition: all 450ms ease-in-out;
+}
+
+.gallery__item:hover .gallery__icon,
+.gallery__item:hover .gallery__category {
+    opacity: 1;
+}

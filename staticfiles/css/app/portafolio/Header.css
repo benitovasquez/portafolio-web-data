@@ -1,0 +1,21 @@
+
+.portfolio__header {
+    margin-bottom: 4.5rem;
+    display: inline-block;
+}
+
+.portfolio__title {
+    font-size: 3.2rem;
+    position: relative;
+}
+
+.portfolio__title::after {
+    content: "";
+    position: absolute;
+    width: 5rem;
+    height: 3rem;
+    top: 2rem;
+    right: -2.5rem;
+    background-image: repeating-radial-gradient(circle at center, var(--color-secundary) 0%, var(--color-secundary) 1px, transparent 1px, transparent 100%);
+    background-size: 6px 6px;
+}

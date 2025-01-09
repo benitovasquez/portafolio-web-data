@@ -1,6 +1,12 @@
 /* Importar variables */
 @import url('../variables.css');
 
+
+/*Estilos Generales*/
+html{
+    font-size: 62.5%; 
+}
+
 /*Imagen de Fondo*/
 body{
     background-position: -2rem -12rem;
@@ -9,31 +15,33 @@ body{
 }
 
 
-/*Estructura Principal*/
-.layout{
+/* Estructura Principal */
+.layout {
     position: relative;
     min-width: 1290px;
     width: 75%;
     height: 80vh;
     min-height: 80vh;
     margin: 10vh auto;
-
     display: grid;
     grid-template-areas: "aside content";
-    grid-template-columns: 30% 70%;
-
-    /*Sombra detras de layout*/
+    grid-template-columns: minmax(300px, 30%) 1fr;
     border-radius: 4rem;
-    box-shadow: 0 0 100px -5px rgba(0, 0, 0,0.25);
+    box-shadow: 0 0 100px -5px rgba(0, 0, 0, 0.25);
 }
 
-/*Barra lateral azul*/
-.layout__aside{
+/* Barra lateral azul */
+.layout__aside {
     grid-area: aside;
     border-radius: 4rem 0 0 4rem;
     overflow-x: hidden;
     background-color: var(--color-secundary);
     color: var(--color-principal);
+    transition: all 0.3s ease-in-out;
+}
+
+.layout__aside.collapsed {
+    width: 80px;
 }
 
 .layout__content {
@@ -43,17 +51,3 @@ body{
     background-color: var(--color-secundary);
     border-radius: 0 10rem 10rem 0;
 }
-
-.content__page{
-    height: 100%;
-    min-height: 100%;
-    background-color: var(--color-principal);
-    border-radius: 3.2rem;
-}
-.page__content{
-    display: flex !important;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-

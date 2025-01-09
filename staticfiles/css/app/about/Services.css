@@ -1,0 +1,27 @@
+.services__container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.services__service {
+    flex-basis: calc(50% - 3rem);
+    margin-right: 3rem;
+    margin-bottom: 2.5rem;
+}
+
+.service__real-icon {
+    color: var(--color-secundary);
+    font-size: 3.8rem;
+}
+
+.service__title {
+    font-size: 1.8rem;
+    margin: 0.5rem 0;
+}
+
+.service__description {
+    font-size: 1.5rem;
+    text-align: justify;
+}

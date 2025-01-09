@@ -1,0 +1,41 @@
+.extra__container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+.extra__info {
+    flex-basis: 30%;
+    padding: 2.5rem 1rem;
+    border: 2px solid var(--color-border-reviews);
+    text-align: center;
+    border-radius: 1rem;
+    transition: all 300ms ease-in-out;
+}
+
+.extra__info:hover {
+    transform: translateY(-0.5rem);
+}
+
+.extra__icon {
+    font-size: 3.3rem;
+    color: var(--color-secundary);
+    margin-bottom: 1rem;
+}
+
+.extra__subtitle {
+    font-size: 1.5rem;
+    margin: 1.5rem;
+}
+
+.extra__quantity {
+    display: block;
+    font-size: 3.6rem;
+    line-height: 5rem;
+    margin: 1.5rem 1rem;
+    margin-bottom: 0;
+    color: var(--color-subtitle);
+}

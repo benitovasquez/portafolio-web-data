@@ -1,0 +1,29 @@
+/*Contacto*/
+.contact__container {
+    display: flex;
+    flex-direction: row;
+}
+
+.contact__info {
+    flex-basis: 33%;
+    padding: 0 1.5rem;
+}
+
+.contact__data {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    padding: 2rem 1rem;
+    text-align: center;
+    background-color: var(--color-background-contact);
+    border: 1px solid var(--color-border-reviews);
+}
+
+.contact__icon {
+    font-size: 3.3rem;
+    color: var(--color-secundary);
+}
+
+.contact__subtitle {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}

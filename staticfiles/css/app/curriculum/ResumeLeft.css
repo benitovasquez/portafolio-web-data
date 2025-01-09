@@ -1,0 +1,123 @@
+/* Importar variables */
+@import url('variables.css');
+
+/*Estilos Generales*/
+.resume__subheader {
+    display: inline-block;
+    padding-right: 1.2rem;
+    margin-bottom: 2.4rem;
+    position: relative;
+}
+
+.resume__subtitle {
+    font-size: 2.1rem;
+}
+
+.resume__subtitle::after {
+    content: "";
+    position: absolute;
+    width: 3rem;
+    height: 2rem;
+    top: 1.75rem;
+    right: -0.5rem;
+    background-image: repeating-radial-gradient(circle at center, var(--color-secundary) 0%, var(--color-secundary) 1px, transparent 1px, transparent 100%);
+    background-size: 6px 6px;
+    opacity: 0.5;
+}
+
+/*Estilos para Curriculum*/
+.resume__container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.resume__left {
+    flex-basis: 58%;
+    margin-right: 1.5rem;
+}
+
+.resume__timelines {
+    margin-bottom: 8.25rem;
+}
+
+.timelines__timeline {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1.5rem;
+}
+
+.timeline__header {
+    flex-basis: 30%;
+    text-align: right;
+    padding-right: 2.5rem;
+}
+
+.timeline__year {
+    margin: 0.3rem 0;
+    line-height: 1.9rem;
+    font-size: 1.4rem;
+}
+
+.timeline__company {
+    display: block;
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: var(--color-company);
+}
+
+.timeline__description {
+    width: 70%;
+    padding-left: 1.5rem;
+}
+
+.timeline__title {
+    font-size: 1.6rem;
+    margin-bottom: 0.3rem;
+}
+
+.timeline__text {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.timeline__divide {
+    position: absolute;
+    top: 0;
+    left: 30%;
+    bottom: -1.8rem;
+    width: 0.1rem;
+    background-color: var(--color-scrollbar);
+}
+
+.timelines__timeline .timeline__divide:last-child {
+    width: 100%;
+}
+
+.timeline__divide::before {
+    position: absolute;
+    margin-top: 0.4rem;
+    margin-left: -0.8rem;
+    content: "";
+    width: 1.7rem;
+    height: 1.7rem;
+    background-color: var(--color-secundary);
+    border-radius: 10rem;
+    opacity: 0.25;
+}
+
+.timeline__divide::after {
+    position: absolute;
+    margin-top: 0.8rem;
+    margin-left: -0.4rem;
+    content: "";
+    width: 0.9rem;
+    height: 0.9rem;
+    background-color: var(--color-principal);
+    border: 0.1rem solid var(--color-secundary);
+    border-radius: 10rem;
+    opacity: 1;
+}

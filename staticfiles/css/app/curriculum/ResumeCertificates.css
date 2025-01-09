@@ -1,0 +1,55 @@
+/* Importar variables */
+@import url('variables.css');
+
+.certificates__container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+.certificates__certificate {
+    flex-basis: calc(50% - 1.5rem);
+    border: 2px solid var(--color-border-reviews);
+    border-radius: 0.8rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.certificate__logo {
+    width: 15rem;
+    height: 100%;
+    background-color: var(--color-backgroud-certificate);
+    padding: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 15rem;
+}
+
+.certificate__image {
+    width: 100%;
+    height: auto;
+}
+
+.certificate_content {
+    padding: 2rem 2.5rem;
+}
+
+.certificate__title {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+}
+
+.certificate__id {
+    display: block;
+    margin: 0.3rem;
+    font-size: 1.3rem;
+    color: var(--color-subtitle);
+}
+
+.certificate__date {
+    font-size: 1.2rem;
+    color: var(--color-subtitle);
+    opacity: 0.9;
+}
