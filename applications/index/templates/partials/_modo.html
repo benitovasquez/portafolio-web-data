@@ -1,6 +1,39 @@
-<!-- Botón de modo Día/Noche -->
-<div class="theme-switch-container">
-    <div id="theme-switch" class="theme-toggle-slider">
-        <i class="fas fa-toggle-on"></i>
-    </div>
-</div>
+  <!-- BOTÓN DÍA/NOCHE (Deslizable) -->
+  <div class="theme-switch-container">
+    <!-- Checkbox oculto -->
+    <input type="checkbox" id="theme-switch" />
+    
+    <!-- Label que actúa como interruptor -->
+    <label for="theme-switch" class="theme-switch">
+      <div class="inner-switch">
+        <!-- ICONO LUNA (SVG) -->
+        <svg class="moon" viewBox="0 0 64 64" fill="currentColor" aria-hidden="true">
+          <circle cx="32" cy="32" r="14" fill="#b6b6b6"></circle>
+          <circle cx="25" cy="25" r="2" fill="#8c8c8c"></circle>
+          <circle cx="34" cy="39" r="1.5" fill="#8c8c8c"></circle>
+          <circle cx="40" cy="28" r="1.5" fill="#8c8c8c"></circle>
+          <circle cx="48" cy="16" r="2" fill="#f1f1f1"></circle>
+          <circle cx="12" cy="20" r="2" fill="#f1f1f1"></circle>
+          <circle cx="18" cy="50" r="1.5" fill="#f1f1f1"></circle>
+        </svg>
+
+        <!-- ICONO SOL (SVG) -->
+        <svg class="sun" viewBox="0 0 64 64" fill="currentColor" aria-hidden="true">
+          <circle cx="32" cy="32" r="12" fill="#ffd766"></circle>
+          <!-- Rayos principales -->
+          <rect x="31" y="10" width="2" height="6" fill="#ffd766"></rect>
+          <rect x="31" y="48" width="2" height="6" fill="#ffd766"></rect>
+          <rect x="48" y="31" width="6" height="2" fill="#ffd766"></rect>
+          <rect x="10" y="31" width="6" height="2" fill="#ffd766"></rect>
+          <!-- Rayos diagonales -->
+          <rect x="44" y="18" width="2" height="6" transform="rotate(45 44 18)" fill="#ffd766"></rect>
+          <rect x="16" y="40" width="2" height="6" transform="rotate(45 16 40)" fill="#ffd766"></rect>
+          <rect x="44" y="44" width="2" height="6" transform="rotate(-45 44 44)" fill="#ffd766"></rect>
+          <rect x="16" y="22" width="2" height="6" transform="rotate(-45 16 22)" fill="#ffd766"></rect>
+        </svg>
+
+        <!-- La “bola” que se desliza -->
+        <span class="switch-ball"></span>
+      </div>
+    </label>
+  </div>

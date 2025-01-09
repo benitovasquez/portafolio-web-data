@@ -1,19 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
     const themeSwitch = document.getElementById('theme-switch');
     const root = document.documentElement;
-
-    // Cambiar tema al hacer clic
-    themeSwitch.addEventListener('click', () => {
-        const isDarkMode = root.classList.toggle('dark-mode');
-        localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-
-        // Cambiar íconos del botón
-        themeSwitch.classList.toggle('dark-mode');
-    });
-
-    // Mantener el tema al recargar
-    if (localStorage.getItem('theme') === 'dark') {
-        root.classList.add('dark-mode');
-        themeSwitch.classList.add('dark-mode');
+  
+    // Verifica si el usuario tenía un tema seleccionado en localStorage
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      root.classList.add('dark-mode');
+      themeSwitch.checked = true;  // Mueve el toggle a la derecha
     }
-});
+  
+    // Al cambiar el estado del checkbox
+    themeSwitch.addEventListener('change', () => {
+      if (themeSwitch.checked) {
+        // Activar modo oscuro
+        root.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        // Activar modo claro
+        root.classList.remove('dark-mode');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  });
+  
