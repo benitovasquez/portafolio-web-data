@@ -1,85 +1,35 @@
 {% load static %}
 
-
 <section class="blog__articles">
-    <article class="articles__article">
-        <div class="article__top">
-            <div class="article__category">Desarrollo</div>
-            <a href="#" class="article__image-link">
-                <div class="article__mask">
-                    <img src="{% static 'img/articulo-1.jpg' %}" alt="articulo1" class="article__image">
-                </div>
-                <div class="article__logo">
-                    <i class="article__icon fa-solid fa-book"></i>
-                </div>
-            </a>
-        </div>
-        <div class="article__bottom">
-            <time class="article__date" datetime="2024-08-30">30/08/2024</time>
-            <a href="#" class="article__link">
-                <h2 class="article__title">Como aprender a programar a 2024 </h2>
-            </a>
-        </div>
-    </article>
-
-    <article class="articles__article">
-        <div class="article__top">
-            <div class="article__category">Desarrollo</div>
-            <a href="#" class="article__image-link">
-                <div class="article__mask">
-                    <img src="{% static 'img/articulo-2.jpg' %}" alt="articulo2" class="article__image">
-                </div>
-                <div class="article__logo">
-                    <i class="article__icon fa-solid fa-book"></i>
-                </div>
-            </a>
-        </div>
-        <div class="article__bottom">
-            <time class="article__date" datetime="2024-08-30">30/08/2024</time>
-            <a href="#" class="article__link">
-                <h2 class="article__title">Como hacer animaciones en css </h2>
-            </a>
-        </div>
-    </article>
-
-    <article class="articles__article">
-        <div class="article__top">
-            <div class="article__category">Desarrollo</div>
-            <a href="#" class="article__image-link">
-                <div class="article__mask">
-                    <img src="{% static 'img/articulo-3.jpg' %}" alt="articulo3" class="article__image">
-                </div>
-                <div class="article__logo">
-                    <i class="article__icon fa-solid fa-book"></i>
-                </div>
-            </a>
-        </div>
-        <div class="article__bottom">
-            <time class="article__date" datetime="2024-08-30">30/08/2024</time>
-            <a href="#" class="article__link">
-                <h2 class="article__title">Cómo usar el LocalStorage en Js </h2>
-            </a>
-        </div>
-    </article>
-    
-    <article class="articles__article">
-        <div class="article__top">
-            <div class="article__category">Desarrollo</div>
-            <a href="#" class="article__image-link">
-                <div class="article__mask">
-                    <img src="{% static 'img/articulo-4.jpg' %}" alt="articulo4" class="article__image">
-                </div>
-                <div class="article__logo">
-                    <i class="article__icon fa-solid fa-book"></i>
-                </div>
-            </a>
-        </div>
-        <div class="article__bottom">
-            <time class="article__date" datetime="2024-08-30">30/08/2024</time>
-            <a href="#" class="article__link">
-                <h2 class="article__title">Como maquetar una web </h2>
-            </a>
-        </div>
-    </article>
-
+    {% if posts %}
+        {% for post in posts %}
+        <article class="articles__article">
+            <div class="article__top">
+                <div class="article__category">Desarrollo</div>
+                <a href="{% url 'blog:post_detail' post.id %}" class="article__image-link">
+                    <div class="article__mask">
+                        {% if post.image %}
+                        <img src="{{ post.image.url }}" alt="{{ post.title }}" class="article__image">
+                        {% else %}
+                        <img src="{% static 'img/default_post_image.jpg' %}" alt="{{ post.title }}" class="article__image">
+                        {% endif %}
+                    </div>
+                    <div class="article__logo">
+                        <i class="article__icon fa-solid fa-book"></i>
+                    </div>
+                </a>
+            </div>
+            <div class="article__bottom">
+                <time class="article__date" datetime="{{ post.date|date:'Y-m-d' }}">{{ post.date|date:'d/m/Y' }}</time>
+                <a href="{% url 'blog:post_detail' post.id %}" class="article__link">
+                    <h2 class="article__title">{{ post.title }}</h2>
+                </a>
+            </div>
+        </article>
+        {% endfor %}
+    {% else %}
+    <div class="no-posts">
+        <p class="no-posts__message">No hay blogs disponibles en este momento.</p>
+    </div>
+    {% endif %}
 </section>

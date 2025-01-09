@@ -1,0 +1,25 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/app/blog/post.css' %}">
+
+
+<div class="post__container">
+  <header class="post__header">
+    <h1 class="post__title">{{ post.title }}</h1>
+    <p class="post__date">{{ post.date|date:'F jS Y' }}</p>
+  </header>
+
+  {% if post.image %}
+  <div class="post__image-container">
+    <img src="{{ post.image.url }}" alt="{{ post.title }}" class="post__image">
+  </div>
+  {% endif %}
+
+  <section class="post__content">
+    <p class="post__description">{{ post.description|safe }}</p>
+  </section>
+</div>
+{% endblock %}
+

@@ -1,3 +1,4 @@
+@import url('../../../css/variables.css');
 
 .portfolio__gallery {
     display: flex;
@@ -60,4 +61,39 @@
 .gallery__item:hover .gallery__icon,
 .gallery__item:hover .gallery__category {
     opacity: 1;
+}
+
+.no-projects {
+    text-align: center;
+    margin: 2rem auto;
+}
+
+.no-projects__message {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-principal);
+}
+
+.sublabels__list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+}
+
+.sublabels__option {
+    padding: 0.4rem 1rem;
+    margin: 0.3rem;
+    font-size: 1.3rem;
+    background-color: var(--color-secundary);
+    border-radius: 0.3rem;
+    color: var(--color-principal);
+    font-weight: bold;
+    transition: all 300ms ease-in-out;
+}
+
+.sublabels__option:hover {
+    background-color: var(--color-principal);
+    color: var(--color-secundary);
+    cursor: pointer;
 }

@@ -26,9 +26,9 @@
             </a>
         </li>
         <li class="menu__option">
-            <a href="{% url 'blog' %}" class="menu__link {% if request.resolver_match.url_name == 'blog' %}menu__link--active{% endif %}">
-                <i class="fa-solid fa-book menu__icon {% if request.resolver_match.url_name == 'blog' %}menu__link--active{% endif %}"></i>
-                <span class="menu__overlay {% if request.resolver_match.url_name == 'blog' %}menu__link--active{% endif %}">Blog</span>
+            <a href="{% url 'blog:index' %}" class="menu__link {% if request.resolver_match.url_name == 'index' %}menu__link--active{% endif %}">
+                <i class="fa-solid fa-book menu__icon {% if request.resolver_match.url_name == 'index' %}menu__link--active{% endif %}"></i>
+                <span class="menu__overlay {% if request.resolver_match.url_name == 'index' %}menu__link--active{% endif %}">Blog</span>
             </a>
         </li>
         <li class="menu__option">
@@ -39,3 +39,10 @@
         </li>
     </ul>
 </nav>
+
+<!-- Botón de modo Día/Noche -->
+<div class="theme-switch-container">
+    <div id="theme-switch" class="theme-toggle-slider">
+        <i class="fas fa-toggle-on"></i>
+    </div>
+</div>

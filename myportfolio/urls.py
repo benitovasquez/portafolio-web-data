@@ -25,7 +25,7 @@ urlpatterns = [
     path('portfolio/', include('applications.portfolio.urls')),
     path('sobre-mi/', include('applications.sobremi.urls')),
     path('curriculum/', include('applications.curriculum.urls')),
-    path('blog/', include('applications.blog.urls')),
+    path('blog/', include(('applications.blog.urls', 'blog'), namespace='blog')),
     path('contacto/', include('applications.contacto.urls')),
     path("__reload__/", include("django_browser_reload.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
