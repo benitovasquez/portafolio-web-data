@@ -16,3 +16,14 @@
     margin-bottom: 2.5rem;
     width: 100%;
 }
+
+.no-posts {
+    text-align: center;
+    margin: 2rem auto;
+}
+
+.no-posts__message {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-principal);
+}
