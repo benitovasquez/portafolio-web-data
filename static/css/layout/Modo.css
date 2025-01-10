@@ -2,39 +2,38 @@
  *           VARIABLES DE MODO OSCURO          *
  ***********************************************/
  .dark-mode {
-    --color-principal: #121212; /* Fondo principal oscuro */
-    --color-secundary: #0288D1; /* Un azul más oscuro pero vibrante */
-
-    --color-background: #1E1E1E; /* Fondo general oscuro */
-    --color-transparent: transparent;
-
-    --color-icons: #E0E0E0; /* Iconos claros */
-    --color-title: #FFFFFF; /* Títulos en blanco */
-    --color-subtitle: #BBBBBB; /* Subtítulos en gris claro */
-    --color-text: #DDDDDD; /* Texto claro para buena legibilidad */
-
-    --color-border-reviews: #3A3A3A; /* Bordes ligeramente contrastados */
-    --color-company: #777777; /* Texto secundario más tenue */
-    --color-scrollbar: #555555; /* Scrollbar oscuro */
-    --backgroud-scrollbar: #333333; /* Fondo del scrollbar */
-
-    --color-backgroud-certificate: #2A2A2A; /* Fondo oscuro para certificados */
-    --color-background-contact: #1E1E1E; /* Fondo oscuro para la sección de contacto */
-
-    /* Variables para el switch */
-    --toggle-width: 80px;
-    --toggle-height: 40px;
-    --toggle-padding: 5px;
-    --toggle-duration: 0.5s;
+  --color-principal: #101010;
+  --color-secundary: #0268A2;
+  --color-background: #181818;
+  --color-title: #EAEAEA;
+  --color-subtitle: #CCCCCC;
+  --color-text: #BBBBBB;
+  --color-icons: #FAFAFA;
+  --color-scrollbar: #444444;
+  --backgroud-scrollbar: #222222;
 }
+
+/* Estilo inicial por defecto */
+html {
+  visibility: hidden; /* Evita mostrar la página sin el tema aplicado */
+  opacity: 0;
+  transition: opacity 0.3s ease; /* Transición suave */
+}
+
+/* Mostrar el contenido una vez que el JS haya aplicado el tema */
+html.loaded {
+  visibility: visible;
+  opacity: 1;
+}
+
   
   /***********************************************
    *          CONTENEDOR DEL SWITCH             *
    ***********************************************/
   .theme-switch-container {
-    position: absolute;
-    top: 20px;  
-    right: 20px;
+    position: fixed;
+    bottom: 20px; /* Cambiar posición al pie de la pantalla */
+    right: 20px; /* Margen desde la derecha */
     z-index: 999; /* Para que quede encima de todo */
     display: flex;
     align-items: center;
