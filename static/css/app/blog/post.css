@@ -1,33 +1,42 @@
 /* Post Container */
 .layout__content {
-    background-color: var(--color-primary); /* Fondo oscuro y adecuado para modo noche */
-    border-radius: 1rem; /* Opcional: bordes redondeados */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Agregar profundidad */
+    background-color: var( --color-background); /* Fondo dinámico según el modo */
+    border-radius: 1rem; /* Bordes redondeados */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3); /* Sombras más profundas para mejor separación */
+    padding: 2rem; /* Espaciado interno */
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transiciones suaves */
 }
 
 .post__container {
-    max-width: 900px;
+    max-width: 1000px; /* Aumentar el ancho máximo para pantallas grandes */
     margin: 0 auto;
-    padding: 3rem 1.5rem;
-    border-radius: 2rem; /* Suavizar bordes */
+    padding: 3rem 2rem;
+    border-radius: 1.5rem; /* Ajuste de bordes */
+    background-color: var(--color-secondary); /* Fondo secundario para contraste */
+    box-shadow: 0px 4px 12px var(--color-company); /* Sombras más suaves */
+    transition: background-color 0.3s ease-in-out; /* Suavizar el cambio de fondo */
 }
 
 /* Header */
 .post__header {
     text-align: center;
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem; /* Más espacio inferior */
 }
 
 .post__title {
-    font-size: 2.8rem;
-    color: #FFFFFF; /* Blanco para mayor contraste */
-    font-weight: 700;
-    margin-bottom: 1rem;
+    font-size: 3rem;
+    color: var(--color-text); /* Variable de texto dinámico */
+    font-weight: bold;
+    margin-bottom: 1.2rem;
+    text-transform: capitalize; /* Formato de título */
+    transition: color 0.3s ease-in-out; /* Suavizar cambio de color */
 }
 
 .post__date {
-    font-size: 1.2rem;
-    color: #BBBBBB; /* Gris claro para no competir con el título */
+    font-size: 1.4rem;
+    color: var(--color-muted); /* Texto tenue dinámico */
+    font-style: italic; /* Diferenciar fecha */
+    transition: color 0.3s ease-in-out; /* Suavizar transición */
 }
 
 /* Image */
@@ -35,36 +44,41 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     overflow: hidden;
-    border-radius: 2.5rem;
-    background-color: rgba(255, 255, 255, 0.1); /* Fondo tenue */
+    border-radius: 2rem;
+    background-color: rgba(255, 255, 255, 0.08); /* Fondo tenue */
+    transition: background-color 0.3s ease-in-out; /* Fondo dinámico */
 }
 
 .post__image {
     max-width: 100%; 
-    max-height: 30rem; 
+    max-height: 35rem; 
     width: auto; 
     height: auto; 
-    object-fit: cover; /* Llenar el contenedor */
-    border-radius: 2.5rem;
-    transition: transform 0.3s ease-in-out;
+    object-fit: cover;
+    border-radius: 2rem;
+    transition: transform 0.4s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25); /* Añadir sombras */
 }
 
-
 .post__image-container:hover .post__image {
-    transform: scale(1.05); /* Sutil efecto de zoom */
+    transform: scale(1.08); /* Efecto zoom más dinámico */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3); /* Sombras más intensas */
 }
 
 /* Content */
 .post__content {
-    font-size: 1.5rem;
-    line-height: 2.2rem;
-    color: #E0E0E0; /* Texto en gris claro */
+    font-size: 1.6rem; /* Tamaño mayor para lectura */
+    line-height: 2.4rem; /* Espaciado cómodo */
+    color: var(--color-text); /* Texto principal dinámico */
     text-align: justify;
+    transition: color 0.3s ease-in-out; /* Suavizar cambios de color */
 }
 
 .post__description {
-    margin-top: 1rem;
-    color: #CCCCCC; /* Gris más claro para descripciones */
+    margin-top: 1.5rem; /* Mayor separación */
+    color: var(--color-muted); /* Color tenue para descripciones */
+    font-size: 1.4rem; /* Tamaño ligeramente menor */
+    transition: color 0.3s ease-in-out; /* Transiciones dinámicas */
 }

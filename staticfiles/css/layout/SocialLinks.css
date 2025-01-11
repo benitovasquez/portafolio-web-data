@@ -1,9 +1,10 @@
 
-.user-info__links{
+/* Estilos principales para los enlaces de redes sociales */
+.user-info__links {
     margin-bottom: 3.6rem;
 }
 
-.links__social{
+.links__social {
     margin: 2rem;
     text-align: center;
     display: flex;
@@ -11,20 +12,34 @@
     flex-direction: row;
 }
 
-.social__option{
-    height: 3rem;
-    width: 3rem;
-    font-size: 2.4rem;
-    line-height: 3.2rem;
-    opacity: 0.9;
-    border-radius: 3rem;
-    transition: all 300 ease-in-out;
-}
-.social__option:hover{
-    opacity: 1;
-    background-color: rgba(255, 255, 255, 0.2);
+/* Contenedor de cada ícono */
+.social__option {
+    height: 3.5rem;
+    width: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Forma circular */
+    background-color: rgba(255, 255, 255, 0.2); /* Fondo translúcido */
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.social_link{
-    color: var(--color-principal);
+/* Estilo para los SVG dentro de los enlaces */
+.ionicon {
+    width: 2.5rem; /* Tamaño del ícono */
+    height: 2.5rem;
+    margin-top: 0.6rem; /* Ajuste de posición */
+    color: var(--color-principal); /* Color del ícono (heredado con currentColor) */
+    transition: transform 0.3s ease, color 0.3s ease; /* Transiciones suaves */
+    fill: currentColor; /* Aplica el color heredado */
+}
+
+/* Efecto al pasar el mouse */
+.social__option:hover {
+    background-color: rgba(255, 255, 255, 0.5); /* Fondo más visible */
+    transform: scale(1.1); /* Agranda ligeramente el contenedor */
+}
+
+.social__option:hover .ionicon {
+    color: var(--color-principal)
 }

@@ -1,4 +1,12 @@
 
+
+.layout__aside{
+    grid-area: aside;
+    border-radius: 4rem 0 0 4rem;
+    overflow-x: hidden;
+    background-color: var(--color-secundary);
+    color: var(--color-principal);
+}
 .aside__user-info{
     display: flex;
     flex-direction: column;
@@ -11,7 +19,6 @@
     background-color: var(--color-secundary);
     color: var(--color-principal);
 }
-
 
 .user-info__container-image{
     position: relative;

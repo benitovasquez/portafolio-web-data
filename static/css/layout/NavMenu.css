@@ -1,25 +1,18 @@
-/*Menu Navegación Lateral*/
+
+
+/* Menú de Navegación Lateral */
 .layout__menu {
     display: block;
     position: absolute;
     top: 0;
-    right: -10.5rem; 
+    right: -10.5rem; /* Ajusta según tu diseño */
     background-color: var(--color-principal);
     min-width: 7rem;
     border-radius: 6rem;
-}
-.menu__option{
-    background-color: var(--color-transparent);
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-}
+    box-shadow: 0 0 3rem -0.5rem rgba(0, 0, 0,0.15);
+    }
 
-.menu__option:hover .menu__icon{
-    color:var(--color-secundary);
-}
-
-.menu__list {
+    .menu__list {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -27,18 +20,51 @@
     position: relative;
     color: var(--color-principal);
     width: 100%;
-    min-height: 40rem;
+    min-height: 40rem; /* Ajusta a tu gusto */
     padding: 2rem 0;
     box-shadow: 0 0 3rem -0.5rem rgba(0, 0, 0,0.15);
     border-radius: 6rem;
-}
+    }
 
-.menu__icon{
-    color: var(--color-icons);
-    font-size: 2.8rem;
-    transition: all 300ms ease-in-out;
-}
-.menu__overlay {
+    .menu__option {
+    background-color: var(--color-transparent);
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    position: relative; /* Para que el overlay se posicione dentro */
+    }
+
+    .menu__link {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    /* Si quieres un color de texto por defecto para el enlace:
+        color: #fff;
+    */
+    }
+
+    .menu__link--active {
+    font-weight: bold;
+    }
+
+    /* ICONOS (SVG) */
+    .menu__icon {
+    width: 2.8rem;   /* Ajusta a tu gusto */
+    height: 2.8rem;  /* Mantiene proporción */
+    fill: var(--color-icons);
+    transition: fill 300ms ease-in-out;
+    }
+
+    .menu__link--active .menu__icon {
+    fill: var(--color-secundary); 
+    }
+
+    .menu__option:hover .menu__icon {
+    fill: var(--color-secundary);
+    }
+
+    /* OVERLAY (texto emergente) */
+    .menu__overlay {
     position: absolute;
     right: 0;
     margin-top: -3rem;
@@ -49,9 +75,11 @@
     background-color: var(--color-secundary);
     white-space: nowrap;
     transition: all 300ms ease-in-out;
-}
+    border-radius: 4px; 
+    }
 
-.menu__option:hover .menu__overlay{
+    /* Al hacer hover en la opción, mostramos el texto flotante hacia la izquierda */
+    .menu__option:hover .menu__overlay {
     opacity: 1;
     right: 100%;
-}
+    }
