@@ -1,8 +1,7 @@
-
-
 .user-info__buttons{
-    margin-top: 2rem;
+    margin-top: 0rem;
     margin-bottom: 4rem;
+    margin-left: -0.5rem;
 }
 .user-info__btn{
     color: var(--color-principal);

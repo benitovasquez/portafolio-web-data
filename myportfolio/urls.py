@@ -30,8 +30,7 @@ urlpatterns = [
     path('contacto/', include('applications.contacto.urls')),
     path("__reload__/", include("django_browser_reload.urls")),
     re_path(r'^favicon\.ico$', lambda request: HttpResponse(status=204)),
-]
+]+ static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS[0])
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

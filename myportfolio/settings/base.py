@@ -80,8 +80,9 @@ WSGI_APPLICATION = "myportfolio.wsgi.application"
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),  # Archivos fuente estáticos
+    os.path.join(BASE_DIR, 'static'),
 ]
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Carpeta destino para collectstatic
 
 MEDIA_URL = '/media/'
