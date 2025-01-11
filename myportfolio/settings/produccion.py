@@ -1,6 +1,6 @@
 from .base import *
 
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ['portafolio-web-data.onrender.com']
 
 # Activar herramientas solo en desarrollo
