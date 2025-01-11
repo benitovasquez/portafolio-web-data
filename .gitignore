@@ -1,0 +1,12 @@
+# Ignorar entornos virtuales
+venv/
+*.pyc
+__pycache__/
+
+# Ignorar archivos sensibles
+.env
+db.sqlite3
+
+# Ignorar carpetas de archivos estáticos y media (opcional si usas S3 o similar)
+staticfiles/
+media/

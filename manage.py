@@ -2,11 +2,17 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+from decouple import config
 
 
 def main():
     """Run administrative tasks."""
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "myportfolio.settings")
+    # Obtener el entorno desde variable de entorno o usar 'local' por defecto
+    DJANGO_ENV = config('DJANGO_ENV', default='local')
+    os.environ.setdefault(
+        "DJANGO_SETTINGS_MODULE", 
+        f"myportfolio.settings.{DJANGO_ENV}"
+    )
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

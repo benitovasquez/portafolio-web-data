@@ -14,7 +14,7 @@
     max-width: 300px; /* Limitar el ancho máximo */
     padding: 2rem;
     border: 1px solid var(--color-border-reviews);
-    background-color: #fff; /* Fondo blanco para contraste */
+    background-color: var(--color-primary); /* Fondo blanco para contraste */
     text-align: center;
     border-radius: 1.5rem; /* Bordes más redondeados */
     transition: transform 300ms ease-in-out, box-shadow 300ms ease-in-out;
