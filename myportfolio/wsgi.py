@@ -10,7 +10,6 @@ https://docs.djangoproject.com/en/5.1/howto/deployment/wsgi/
 import os
 from django.core.wsgi import get_wsgi_application
 
-# Obtener el entorno desde la variable de entorno o usar 'produccion' como predeterminado
 DJANGO_ENV = os.getenv('DJANGO_ENV', 'produccion')
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', f'myportfolio.settings.{DJANGO_ENV}')
 
