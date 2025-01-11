@@ -1,6 +1,6 @@
 from .base import *
 
-DEBUG = False
+DEBUG = True 
 ALLOWED_HOSTS = ['portafolio-web-data.onrender.com']
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
