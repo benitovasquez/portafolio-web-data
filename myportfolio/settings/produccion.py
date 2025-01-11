@@ -1,12 +1,19 @@
 from .base import *
 
-DEBUG = True 
+DEBUG = False
 ALLOWED_HOSTS = ['portafolio-web-data.onrender.com']
 
+# Activar herramientas solo en desarrollo
+if DEBUG:
+    INSTALLED_APPS += ['django_browser_reload']
+    MIDDLEWARE += ['django_browser_reload.middleware.BrowserReloadMiddleware']
+
+# Agregar hostname externo si está disponible (para entornos dinámicos como Render)
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
     ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
+# Configuración de la base de datos
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -18,26 +25,33 @@ DATABASES = {
     }
 }
 
-# Security configurations
+# Configuraciones de seguridad para producción
 SECURE_SSL_REDIRECT = True
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 SECURE_BROWSER_XSS_FILTER = True
-SECURE_REFERRER_POLICY = 'no-referrer-when-downgrade'
+SECURE_REFERRER_POLICY = 'strict-origin-when-cross-origin'  # Más estricto pero práctico
 X_FRAME_OPTIONS = 'DENY'
-SECURE_HSTS_SECONDS = 31536000
+SECURE_HSTS_SECONDS = 31536000  # 1 año
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True
 
-# Logging configuration
+# Configuración del logging
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {message}',
+            'style': '{',
+        },
+    },
     'handlers': {
         'file': {
             'level': 'ERROR',
             'class': 'logging.FileHandler',
             'filename': os.path.join(BASE_DIR, 'logs/error.log'),
+            'formatter': 'verbose',
         },
     },
     'loggers': {
@@ -49,7 +63,6 @@ LOGGING = {
     },
 }
 
-# Ensure logs directory exists
+# Crear el directorio de logs si no existe
 logs_dir = os.path.join(BASE_DIR, 'logs')
-if not os.path.exists(logs_dir):
-    os.makedirs(logs_dir)
+os.makedirs(logs_dir, exist_ok=True)
