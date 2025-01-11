@@ -1,19 +1,13 @@
 from .base import *
 
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = ['portafolio-web-data.onrender.com']
-
-# Activar herramientas solo en desarrollo
-if DEBUG:
-    INSTALLED_APPS += ['django_browser_reload']
-    MIDDLEWARE += ['django_browser_reload.middleware.BrowserReloadMiddleware']
 
 # Agregar hostname externo si está disponible (para entornos dinámicos como Render)
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
     ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
-# Configuración de la base de datos
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
